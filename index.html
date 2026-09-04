@@ -1864,7 +1864,97 @@ footer p{
 
   color:#181206;
 }
+/* ================================
+   MOBILE STABILITY FIX
+   Prevent browser zoom/jitter
+================================ */
 
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+/* Keep decorative animations inside viewport */
+.aurora {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.aurora span {
+  max-width: 70vw;
+  max-height: 70vw;
+}
+
+/* Prevent mobile animation from causing visual scaling/jitter */
+@media (max-width: 760px) {
+
+  .hero-photo-float {
+    animation: none;
+  }
+
+  .hero-photo-ring {
+    animation: none;
+  }
+
+  .hero-photo-inner {
+    animation: none;
+  }
+
+  .hero-photo-blob {
+    animation: none;
+  }
+
+  .aurora span {
+    animation: none;
+    filter: blur(60px);
+  }
+
+  .proj-card {
+    transform: none !important;
+  }
+}
+
+/* Prevent accidental horizontal expansion */
+img,
+video,
+iframe,
+table {
+  max-width: 100%;
+}
+
+* {
+  max-width: 100%;
+}
+@media (max-width: 680px) {
+  .wrap {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .nav-inner {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .terminal {
+    width: 100%;
+  }
+
+  .terminal-body {
+    overflow-x: auto;
+  }
+}
 </style>
 </head>
 
